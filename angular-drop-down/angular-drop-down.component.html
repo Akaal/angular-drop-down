@@ -1,0 +1,36 @@
+<div class="col-12 col-lg-12 col-sm-12 col-md-12 left nopad styles" style="    max-width: 300px;"
+  *ngIf="!isKeyValuePairData">
+  <div class="col-12 col-lg-12 col-sm-12 col-md-12 left nopad disable-status " style="    max-width: 300px;"
+    *ngIf="!isKeyValuePairData">
+    <div class="col-12 col-lg-12 col-sm-12 col-md-12 left nopad">
+      <div class="col-12 col-lg-12 col-sm-12 col-md-12 left pad5  pre-segment"
+        *ngIf="dropDownName != null && dropDownName != ''">
+        {{dropDownName}}
+      </div>
+      <div class="col-12 col-lg-12 col-sm-12 col-md-12 left nopad marg14"
+        [class.enableClass] = "disableDropDown"
+        [class.disableClass] = "!disableDropDown">
+        <div class="col-12 col-lg-12 col-sm-12 col-md-12 left nopad ">
+          <div class="setTimeinterval dropdown" id="sefilter">
+            <button id="fbLabel" tabindex="0" style="width: calc(100% - 2px);    min-width: 145px;display: inline-block; position: relative;
+          float: left;" class="dropdown-select" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <span labelFor="fbLabel" id="selVal" style="width: 100%;    width: calc(100% - 40px);
+            display: inline-block;" class="float-left selVal">{{selectedValue}}</span>
+              <span tabindex="0" class="caret baseline" style="display: inline-block;
+            float: left;
+            left: 10px;top: 0px;
+            position: relative !important;">
+                <img tabindex="0" class="img-responsive newfilt" height="30" src="assets/Orion_angle-down.svg">
+              </span>
+            </button>
+            <ul tabindex="0" class="dropdown-menu ns" style="min-height: 50px;    max-height: 200px;
+          width: calc(100% - 50px);  height: auto;transform:none;" id="scrollside" aria-labelledby="fbLabel">
+              <li tabindex="-1" (keydown)="selectedValueChange(entry.key,entry.value);" (click)="selectedValueChange(entry.key,entry.value);"
+                *ngFor="let entry of commonComboBoxModel.ComboBoxModelData; let i= index">{{entry.value}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
